@@ -84,6 +84,7 @@ class CustomInfoProperty(models.Model):
             ("text", "Multi line Text"),
             ("html", "Complex text"),
             ("many2one", "Choice"),
+            ("reference", "Reference"), # Error: QWeb2 - template['FieldMany2One']: No enumerator given to foreach
         ],
         default="char",
         required=True,
@@ -107,6 +108,7 @@ class CustomInfoProperty(models.Model):
             "text": "str",
             "html": "str",
             "many2one": "id",
+            "reference": "str",
         }
 
     @api.depends("widget")
